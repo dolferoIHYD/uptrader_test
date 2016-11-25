@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ menu.title }}{% endblock %}
+
+{% block content %}
+  <p>
+    .{{ menu.title }}
+    <ul>
+      {% for menu_item in first_level_items %}
+        <li><a href="/{{ menu.title }}/{{ menu_item.title }}/">{{ menu_item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </p>
+{% endblock %}

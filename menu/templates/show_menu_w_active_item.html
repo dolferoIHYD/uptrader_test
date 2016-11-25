@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ menu.title }}{% endblock %}
+
+{% block content %}
+  {% for item in list %}
+    {% with ''|center:item.level as range %}
+    {% for _ in range %}
+      <b>-</b>
+    {% endfor %}
+    {% endwith %}
+      <a href="/{{ menu.title }}/{{ item.title }}/">{{ item.title }}</a>
+      <br>
+  {% endfor %}
+{% endblock %}
